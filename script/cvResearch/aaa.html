@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/style2.css" />
+<script type="text/javascript" src="js/mootools-core-1.4.5-full-compat-yc.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script src="js/respond.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="css/site.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<title>TW Hongbao</title>
+
+<style type="text/css">
+		
+		
+		
+.block{padding:5px 2px 0px 5px; position:relative;z-index:100;  margin:0 auto; height:500px;}
+	
+		#prof img {
+		dislay: inline;
+			margin: 0px;
+padding: 0px;
+		}		
+		
+		
+</style>
+</head>
+<body>
+<div class="header-wrapper">
+<header class="header container-liquid">
+<div class="desktop-header hidden-xs ">
+<div class="logo">
+<img src="images/logo.png" alt="watches" />
+</div>
+<nav class="navigation">
+<ul class="menu">
+<li class="top items">ä¸»é </li>
+<li class="top items">çåµ</li>
+<li class="top items">åå¡</li>
+<li class="top items">åªæ è¨æ¯</li>
+</ul>
+</nav>
+<ul class="header-icons">
+<li id="btn-search"><a href="#"><img src="images/icon-search.png" /></a></li>
+<li><a href="#"><img src="images/icon-account.png" /></a></li>
+<li><a href="#"><img src="images/icon-cart.png" /></a></li>
+</ul>
+</div>
+<div class="mobile-header visible-xs-block">
+<div class="mobile-nav-wrapper">
+<div class="hamburger"><img src="images/mobile-hamburger.png" /></div>
+<div class="search-icon" id="btn-search"><img src="images/icon-search.png" /></div>
+<div class="logo"><img src="images/logo.png" /></div>
+<div class="account"><img src="images/icon-account.png" /></div>
+<div class="cart"><img src="images/icon-cart.png" /></div>
+</div>
+</div>
+</header>
+</div>
+<div class="block">
+<h1>æ¨ææ©æè´å¾ <br />è¶å¸è³¼ç©å¸ä¸è¬å<br />
+<span style="font-size:0.5em;">åç­ç°¡å®åé¡:</span>
+</h1>
+<div id="prof">
+<img src="images/profile_img_01.png" alt="">
+<img src="images/profile_img_02.png" alt="">
+<img src="images/profile_img_03.png" alt="">
+<img src="images/profile_img_04.png" alt="">
+</div>
+</div>
+<div id="questionfield">
+<div id="questions">
+
+<h2 id="question_headline">
+åé¡<span id="min_number"></span> &nbsp;<span id="max_number"></span>
+</h2>
+
+
+<div class="questionblock">
+<p>è«é¸ææ¨çæ§å¥</p>
+<a class="button">
+<span>ç·æ§</span>
+</a>
+<a class="button">
+<span>å¥³æ§</span>
+</a>
+</div>
+
+
+<div class="questionblock">
+<p>è«åæ¨å¸¸éè¶å¸æå¤§è³£å ´å?</p>
+<a class="button">
+<span>ç¶å¸¸</span>
+</a>
+<a class="button">
+<span>ä¸ä¸å®</span>
+</a>
+</div>
+
+
+<div class="questionblock">
+<p>è«åæ¨çå¹´é½¡æ¯?</p>
+<a class="button">
+<span>18-29</span>
+</a>
+<a class="button">
+<span>30-39</span>
+</a>
+<a class="button">
+<span>40-49</span>
+ </a>
+<a class="button">
+<span>50+</span>
+</a>
+</div>
+
+</div>
+
+<div id="page_prozess" class="hidden">
+<div class="prozess">
+<p id="prozess_status_1" class="prozess_status">
+<span>å³éç­æ¡ä¸­...</span>
+</p>
+<p id="prozess_status_2" class="prozess_status hidden">
+<span>åæçµæä¸­...</span>
+</p>
+<p id="prozess_status_3" class="prozess_status hidden">
+<span>æ­åæ¨! æ¨å·²å·ååå è³æ ¼!</span><br />
+è½å¥æ´»åé é¢...
+</p>
+</div>
+<div class="prozess_bar"></div>
+</div>
+<div id="page_prize" class="hidden">
+</div>
+<a id="target_link" class="hidden" href="https://mail.hodtd.com/aff_c?"></a>
+</div>
+<div class="footer container-fluid">
+<div class="absolute-footer row">
+<div class="motto">æåæ¢æ¬¾Â | åè²¬ é±ç§æ¬ä¿è­·
+</div>
+</div>
+</div>
+<script>
+         $('#continue-btn').hide();
+        $('document').ready(function() {
+            function spinningSlot() {
+                $('.slot1').addClass('slot1-transform');
+                $('.slot2').addClass('slot2-transform');
+                $('.slot3').addClass('slot3-transform');
+                $('.slot4').addClass('slot4-transform');
+                $('.slot5').addClass('slot5-transform');
+                setTimeout(winLine, 3000);
+                setTimeout(win, 4500);
+            }
+            var effect1 = function() {
+                $('#effect1').show();
+                $('#congratulations').show();
+               
+                
+            }
+            var winLine = function() {
+                $('.win-line').addClass('win-line-transform');
+                 
+            }
+            var win = function() {
+                setTimeout(effect1, 1500);
+                setTimeout(displayform, 4500);
+        
+            }
+            $("#spin-btn").click(function() {
+                spinningSlot();
+            });
+             $("#continue-btn").click(function() {
+               document.location = document.getElementById("target_link").href;
+            });
+            var modal = document.getElementById('myModal');
+
+            function displayform() {
+                $('#spin-btn').hide();
+                $('#continue-btn').show();
+                modal.style.display = "block";
+                $('.win-line').hide();
+            }
+             
+        });
+ </script>
+
+<script type="text/javascript">
+if(window.location.search){
+    var para = window.location.search;
+    var href = '/cgi-bin/global.pl?todo=log_clicks_prelander';
+    if(window.location.search[0] == '?'){
+        para = para.substring(1,para.lenght);
+    }
+    if(href.match(/\?$/) || href.match(/&$/)){
+        href = href+para;
+    }else if(href.match(/\/$/)){
+        href = href+'?'+para;
+    }else{
+        href = href+'&'+para;
+    }
+    document.write('<img src="'+href+'" width="1" height="1" border="0">');
+}
+</script>
+<script>
+  window.addEventListener("load", function(event) {   
+  document.getElementById("trigger_btn").addEventListener("click", function(){  
+      document.getElementById("question_cover").style.display = "none"; 
+      document.getElementById("question_open").style.display = "block"; 
+      
+  })
+  });
+    
+(function() {
+    var rotator = document.getElementById('img_1'), //get the element
+        dir = 'images/',                               //images folder
+        delayInSeconds = 1,                           //delay in seconds
+        num = 0,                                      //start number
+        len = 3;                                      //limit
+    setInterval(function(){                           //interval changer
+    num = (num === len) ? 0 : num;                //reset if limit reached
+    rotator.src = dir+ num + '.png';                     //change picture
+    num++; 
+    }, delayInSeconds * 1000);
+}());
+(function() {
+    var rotator2 = document.getElementById('img_2'), //get the element
+        dir = 'images/',                               //images folder
+        delayInSeconds = 1,                           //delay in seconds
+        num = 0,                                      //start number
+        len = 3;                                      //limit
+    setInterval(function(){                           //interval changer
+    num = (num === len) ? 0 : num;                //reset if limit reached
+    rotator2.src = dir+ num + '.png';                     //change picture
+    num++; 
+    }, delayInSeconds * 1000);
+}()); 
+</script>
+</body>
+</html>

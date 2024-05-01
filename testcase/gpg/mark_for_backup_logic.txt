@@ -1,0 +1,222 @@
+    # def AgentLogin(self, **kwargs):
+    #     """代理會員登入"""
+    #     if r.get('agentToken') != None:
+    #         token = '\"' + r.get('agentToken') + '\"'
+    #         refresh = '\"' + r.get('agentRefresh') + '\"'
+    #         js = """localStorage.setItem("userToken",\'[{token},{refresh}]\')""".format(token=token, refresh=refresh)
+    #         self.token = r.get('agentToken')
+    #         self.driver.execute_script(js)
+    #         self.reload()
+    #     else:
+    #         if kwargs.get('account') == None or kwargs.get('password') == None:
+    #             account, password = env['agent_account'], env['agent_password']
+    #         else:
+    #             account, password = kwargs.get('account'), kwargs.get('password')
+    #         self.token, self.refresh,_ = self.AgentRegister(account=account, password=password)
+    #         r.set('agentToken', self.token)
+    #         r.set('agentRefresh', self.refresh)
+
+        # def guestFunc(self):
+    #     self.driver.find_element(By.XPATH, '//div[contains(@class,"menu__member")]/img').click()
+    #     self.driver.implicitly_wait(3)
+    #     self.driver.find_element(By.XPATH, '//button[text()="訪客遊玩"]').click()
+    #     self.driver.find_element(By.XPATH, '//button[text()="開始遊戲"]').click()
+    #     self.reload()
+    #     return eval(self.driver.execute_script('return localStorage.getItem("userToken")'))
+
+    # def guest(self, **kwargs):
+    #     """訪客登入"""
+    #     if kwargs.get('createMember') == True:
+    #         self.guestFunc()
+    #     else:
+    #         if r.get('guestToken') != None:
+    #             token = '\"' + r.get('guestToken') + '\"'
+    #             refresh = '\"' + r.get('guestRefresh') + '\"'
+    #             js = """localStorage.setItem("userToken",\'[{token},{refresh}]\')""".format(token=token,
+    #                                                                                         refresh=refresh)
+    #             self.token = r.get('guestToken')
+    #             self.driver.execute_script(js)
+    #             self.reload()
+    #         else:
+    #             self.token, self.refresh,_ = self.guestFunc()
+    #             r.set('guestToken', self.token)
+    #             r.set('guestRefresh', self.refresh)
+
+    # def loginFunc(self, **kwargs):  # 登入拆分
+    #     """登入拆分"""
+    #     self.driver.find_element(By.XPATH, '//div[contains(@class,"menu__member")]/img').click()
+    #     self.driver.find_element(By.XPATH, '//input[@class="vti__input"]').send_keys(kwargs.get('account'))
+    #     self.wait.until(EC.element_to_be_clickable((By.XPATH, '//button[contains(@class,"bg-purpleBtn")]')))
+    #     self.driver.find_element(By.XPATH, '//button[contains(@class,"bg-purpleBtn")]').click()
+    #     self.wait.until(EC.visibility_of_element_located((By.XPATH, '//div[contains(@class,"px-5")]')))
+    #     self.driver.find_element(By.XPATH, '//input[contains(@class,"actual__input__box")]').send_keys(
+    #         kwargs.get('validcode'))
+    #     self.wait.until(EC.element_to_be_clickable((By.XPATH, '//button[contains(@class,"bg-purpleBtn")]')))
+    #     self.driver.find_element(By.XPATH, '//button[contains(@class,"bg-purpleBtn")]').click()
+    #     time.sleep(2)
+    #     return eval(self.driver.execute_script('return localStorage.getItem("userToken")'))
+
+    # def login(self, **kwargs):
+    #     """登入"""
+    #     if r.get('memberToken') != None:
+    #         token = '\"' + r.get('memberToken') + '\"'
+    #         refresh = '\"' + r.get('memberRefresh') + '\"'
+    #         js = """localStorage.setItem("userToken",\'[{token},{refresh}]\')""".format(token=token, refresh=refresh)
+    #         self.token = r.get('memberToken')
+    #         self.driver.execute_script(js)
+    #         self.reload()
+    #     else:
+    #         if kwargs.get('account') == None and kwargs.get('validcode') == None:
+    #             self.token, self.refresh,_ = self.loginFunc(account=env['member_account'], validcode=env['validate_code'])
+    #             r.set('memberToken', self.token)
+    #             r.set('memberRefresh', self.refresh)
+
+        # def jkf_guest(self, **kwargs):
+    #     """jkf訪客"""
+    #     self.driver.find_element(By.XPATH, '//input[@class="vti__input"]').send_keys(kwargs.get('account'))
+    #     time.sleep(1)
+    #     self.driver.find_element(By.XPATH, '//button[contains(@class,"bg-purpleBtn")]').click()
+    #     self.driver.implicitly_wait(10)
+    #     self.driver.find_element(By.XPATH, '//input[contains(@class,"actual__input__box")]').send_keys(
+    #         kwargs.get('validcode'))
+    #     self.wait.until(
+    #         EC.element_to_be_clickable((By.XPATH, '//div[contains(@class,"phone-validate__button")]')))
+    #     self.driver.find_element(By.XPATH, '//div[contains(@class,"phone-validate__button")]').click()
+    #     self.driver.implicitly_wait(10)
+    #     self.closeDaily()
+    #     self.driver.implicitly_wait(10)
+    #     self.driver.find_element(By.XPATH, '//input[@placeholder="告訴我你的名字吧！"]').send_keys(kwargs.get('nickname'))
+    #     self.driver.implicitly_wait(10)
+    #     self.driver.find_element(By.XPATH, '//div[contains(@class,"set-profile__button")]').click()
+
+    def codeRegister(self, **kwargs):
+        """帶入推廣碼(邀請碼)註冊"""
+        self.codeRegisterFunc(account=kwargs.get('account'), validcode=kwargs.get('validcode'))
+        self.driver.implicitly_wait(10)
+        self.closeDaily()
+        self.wait.until(EC.visibility_of_element_located((By.XPATH, '//input[@placeholder="告訴我你的名字吧！"]')))
+        self.driver.find_element(By.XPATH, '//input[@placeholder="告訴我你的名字吧！"]').send_keys(kwargs.get('nickname'))
+        self.wait.until(EC.element_to_be_clickable((By.XPATH, '//button[contains(@class,"bg-purpleLine")]')))
+        self.driver.find_element(By.XPATH, '//button[contains(@class,"bg-purpleLine")]').click()
+        time.sleep(1)
+        # print(re.compile('>開始遊戲<', re.S).findall(self.driver.page_source))
+        if re.compile('>開始遊戲<', re.S).findall(self.driver.page_source) != []:
+            self.driver.find_element(By.XPATH, '//button[contains(@class,"bg-redBtn") and text()="開始遊戲"]').click()
+        else:
+            # self.view_source()
+            self.driver.find_element(By.XPATH, '//button[contains(@class,"bg-purpleBtn")]').click()
+        # try:
+        #     self.driver.find_element(By.XPATH, '//button[contains(@class,"bg-purpleBtn")]').click()
+        # except:
+        #     self.driver.find_element(By.XPATH, '//button[contains(@class,"bg-redBtn") and text()="開始遊戲"]').click()
+        self.driver.implicitly_wait(10)
+
+    # def codeRegisterFunc(self, **kwargs):
+    #     """抽出來共同模型後台推廣碼註冊"""
+    #     self.driver.find_element(By.XPATH, '//input[@class="vti__input"]').send_keys(kwargs.get('account'))
+    #     time.sleep(1)
+    #     self.driver.find_element(By.XPATH, '//button[contains(@class,"bg-purpleBtn")]').click()
+    #     self.driver.implicitly_wait(10)
+    #     self.driver.find_element(By.XPATH, '//input[contains(@class,"actual__input__box")]').send_keys(
+    #         kwargs.get('validcode'))
+    #     self.wait.until(EC.element_to_be_clickable((By.XPATH, '//button[contains(@class,"bg-purpleBtn")]')))
+    #     self.driver.find_element(By.XPATH, '//button[contains(@class,"bg-purpleBtn")]').click()
+
+        def register(self, **kwargs):
+        """註冊"""
+        self.driver.find_element(By.XPATH, '//div[contains(@class,"menu__member")]/img').click()
+        self.codeRegister(account=kwargs.get('account'), nickname=kwargs.get('nickname'),
+                          validcode=kwargs.get('validcode'))
+
+    def guestRegister(self, **kwargs):
+        """訪客轉會員"""
+        self.driver.get('')
+        count = 0
+        while True:
+            try:
+                self.driver.find_element(By.XPATH, '//button[text()="手機驗證"]').click()
+                self.codeRegisterFunc(account=kwargs.get('account'), validcode=kwargs.get('validcode'))
+                break
+            except:
+                if self.driver.find_element(By.XPATH, '//span[text()="已驗證"]'):  # 確定已完成別再回圈打轉
+                    break
+                else:
+                    count += 1
+                    if count <= 3:
+                        continue
+                    else:
+                        break
+
+    def AgentRegister(self, **kwargs):  # 單純代理登入轉正式會員拆分
+        self.driver.find_element(By.XPATH, '//div[contains(@class,"menu__member")]/img').click()
+        self.driver.find_element(By.XPATH, '//button[text()="帳號登入"]').click()
+        self.driver.find_element(By.XPATH, '//input[@type="account"]').send_keys(kwargs.get('account'))
+        self.driver.find_element(By.XPATH, '//input[@type="password"]').send_keys(kwargs.get('password'))
+        self.driver.find_element(By.XPATH, '//button[text()="登入"]').click()
+        time.sleep(3)
+        self.reload()
+        return eval(self.driver.execute_script('return localStorage.getItem("userToken")'))
+
+    # @unittest.skipIf(env['env'] == 'prod','正式站跳過')
+    # def test_register_jkf(self): #未來等活動再有ＪＫＦ再進行重構
+    #     """測試jkf註冊"""
+    #     self.test_driver = driver_eng(url='{font_url}?third=jkf'.format(font_url=env['font_url']))
+    #     self.test_driver.jkf_guest(account='+886999999978',validcode='999999',nickname='JKFㄇ珠豬測7777')
+    #     res = self.test_driver.driver.find_element(By.XPATH,'//div[@class="reward__list"]').text.replace('\n','')
+    #     self.assertEqual(res,'銀幣60,000金幣1,688JKF頭像貼')
+    #     self.test_driver.exit()
+
+    # @unittest.skipIf(env['env'] == 'prod','正式站跳過')
+    # def test_register_jkf_First(self):  #未來等活動再有ＪＫＦ再進行重構
+    #     """測試jkf初始金銀幣數量"""
+    #     self.test_driver = driver_eng(url='{font_url}?third=jkf'.format(font_url=env['font_url']))
+    #     self.test_driver.jkf_guest(account='+886999999979',validcode='999999',nickname='JKFㄇ珠豬測7776')
+    #     self.test_driver.closeDaily()
+    #     self.test_driver.driver.execute_script("arguments[0].click();",self.test_driver.driver.find_element(By.XPATH,'//div[contains(@class,"reward__button")]'))
+    #     self.test_driver.driver.find_element(By.XPATH, '//div[contains(@class,"btn__close")]').click()
+    #     self.test_driver.memberSelect('會員中心')
+    #     silver = self.test_driver.driver.find_element(By.XPATH,'//img[@src="/img/i_money_silver.bfa06d7e.svg"]/following-sibling::div').text
+    #     gold = self.test_driver.driver.find_element(By.XPATH,'//img[@src="/img/i_money_gold.3b91b845.svg"]/following-sibling::div').text
+    #     self.assertEqual(bool(silver=="60,000"),bool(gold=="1,688"))
+    #     self.test_driver.exit()
+    # def choiceBuy(self):
+    #     """選擇禮包"""
+    #     self.wait.until(
+    #         EC.visibility_of_element_located((By.XPATH, '//div[contains(@class,"deposit__package__list")]')))
+    #     choice = [i for i in
+    #               self.driver.find_elements(By.XPATH, '//div[contains(@class,"deposit__package__list")]/div')].pop()
+    #     choice.click()
+
+    # def emailPhoneBuy(self):
+    #     """載具類型-手機Email"""
+    #     self.choiceBuy()
+    #     self.choiceServiceProvider()
+
+
+    # def choiceServiceProvider(self):
+    #     """選擇電信業者"""
+    #     if self.driver.find_element(By.XPATH,
+    #                                 '//div[contains(@class,"deposit__title") and text()="*請選擇當前使用的電信才能成功購買"]'):
+    #         self.driver.find_element(By.XPATH, '//div[contains(@class,"select__label")]').click()
+    #         self.driver.find_element(By.XPATH, '//div[text()="中華電信"]').click()
+    #     else:
+    #         pass
+
+    # def buyGiftPack(self):
+    #     self.choiceBuy()
+    #     self.choiceServiceProvider()
+    #     self.wait.until(EC.visibility_of_element_located((By.XPATH, '//div[text()="購買"]')))
+    #     self.driver.find_element(By.XPATH, '//div[text()="購買"]').click()
+
+    # def emailNature(self):
+    #     """購買禮包自然人憑證輸入"""
+    #     self.choiceBuy()
+    #     self.choiceServiceProvider()
+    #     self.wait.until(EC.visibility_of_element_located((By.XPATH, '//div[@class="label" and text()="載具類型"]')))
+    #     self.driver.find_element(By.XPATH, '//div[@class="label" and text()="載具類型"]').click()
+    #     self.wait.until(EC.visibility_of_element_located((By.XPATH, '//input[@placeholder="*電子信箱為必填資訊"]')))
+    #     self.driver.find_element(By.XPATH, '//input[@placeholder="*電子信箱為必填資訊"]').send_keys('AAA@AAA.com')
+    #     self.driver.find_element(By.XPATH, '//input[@placeholder="自然人憑證載具條碼"]').click()
+    #     self.driver.find_element(By.XPATH, '//input[@placeholder="自然人憑證載具條碼"]').send_keys('AA11111111111111')
+    #     self.wait.until(EC.visibility_of_element_located((By.XPATH, '//div[text()="購買"]')))
+    #     self.driver.find_element(By.XPATH, '//div[text()="購買"]').click()

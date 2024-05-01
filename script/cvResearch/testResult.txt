@@ -1,0 +1,3 @@
+{"testcase": "test_1 (__main__.Login)", "result": "fail"}
+{"testcase": "test_2 (__main__.Login)", "result": "pass"}
+{"testcase": "test_3 (__main__.Login)", "result": "error"}

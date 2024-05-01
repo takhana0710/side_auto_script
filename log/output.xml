@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.9.6 on darwin)" generated="20230221 10:40:54.340" rpa="false" schemaversion="3">
+<suite id="s1" name="testBasic" source="/Users/huahung/gpg-automation/rbframework/Tests/testBasic.robot">
+<kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
+<arg>  </arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230221 10:40:55.016" level="INFO">Opening browser 'Chrome' to base url '  '.</msg>
+<msg timestamp="20230221 10:40:55.030" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20230221 10:40:55.031" level="FAIL">WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</msg>
+<status status="FAIL" starttime="20230221 10:40:55.015" endtime="20230221 10:40:55.052"/>
+</kw>
+<test id="s1-t1" name="TestLogin" line="26">
+<tag>Member</tag>
+<status status="FAIL" starttime="20230221 10:40:55.055" endtime="20230221 10:40:55.059">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t2" name="TestGameList" line="30">
+<tag>Game</tag>
+<status status="FAIL" starttime="20230221 10:40:55.063" endtime="20230221 10:40:55.063">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t3" name="TestGameDetail" line="40">
+<status status="FAIL" starttime="20230221 10:40:55.065" endtime="20230221 10:40:55.066">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t4" name="TestDeposit" line="42">
+<status status="FAIL" starttime="20230221 10:40:55.067" endtime="20230221 10:40:55.069">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t5" name="TestDepositBuy" line="44">
+<status status="FAIL" starttime="20230221 10:40:55.072" endtime="20230221 10:40:55.073">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t6" name="TestSerialCode" line="46">
+<status status="FAIL" starttime="20230221 10:40:55.078" endtime="20230221 10:40:55.079">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t7" name="TestStoreLocal" line="48">
+<status status="FAIL" starttime="20230221 10:40:55.080" endtime="20230221 10:40:55.081">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t8" name="TestRankList" line="50">
+<status status="FAIL" starttime="20230221 10:40:55.082" endtime="20230221 10:40:55.083">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t9" name="TestTwitter" line="52">
+<status status="FAIL" starttime="20230221 10:40:55.097" endtime="20230221 10:40:55.098">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t10" name="TestChatRoom" line="54">
+<status status="FAIL" starttime="20230221 10:40:55.101" endtime="20230221 10:40:55.104">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t11" name="TestTransferWallet" line="56">
+<status status="FAIL" starttime="20230221 10:40:55.112" endtime="20230221 10:40:55.117">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t12" name="TestMemberCenter" line="58">
+<status status="FAIL" starttime="20230221 10:40:55.129" endtime="20230221 10:40:55.130">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t13" name="TestMemberCenterGift" line="60">
+<status status="FAIL" starttime="20230221 10:40:55.131" endtime="20230221 10:40:55.131">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t14" name="TestMemberCenterIconFrame" line="62">
+<status status="FAIL" starttime="20230221 10:40:55.133" endtime="20230221 10:40:55.134">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t15" name="TestMemberData" line="64">
+<status status="FAIL" starttime="20230221 10:40:55.137" endtime="20230221 10:40:55.138">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t16" name="TestMemberDataNickName" line="66">
+<status status="FAIL" starttime="20230221 10:40:55.142" endtime="20230221 10:40:55.143">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t17" name="TestMemberDataCopyInvitationCode" line="68">
+<status status="FAIL" starttime="20230221 10:40:55.145" endtime="20230221 10:40:55.145">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t18" name="TestOrderList" line="70">
+<status status="FAIL" starttime="20230221 10:40:55.146" endtime="20230221 10:40:55.147">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t19" name="TestOrderListGiftSendRecord" line="72">
+<status status="FAIL" starttime="20230221 10:40:55.149" endtime="20230221 10:40:55.150">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<test id="s1-t20" name="TestOrderListGiftReceiveRecord" line="74">
+<status status="FAIL" starttime="20230221 10:40:55.154" endtime="20230221 10:40:55.165">Parent suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</test>
+<status status="FAIL" starttime="20230221 10:40:54.344" endtime="20230221 10:40:55.169">Suite setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="20" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">Game</stat>
+<stat pass="0" fail="1" skip="0">Member</stat>
+</tag>
+<suite>
+<stat pass="0" fail="20" skip="0" id="s1" name="testBasic">testBasic</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.9.6 on darwin)" generated="20230215 11:55:30.209" rpa="false" schemaversion="3">
+<suite id="s1" name="Ex4" source="/Users/huahung/rbframe/Tests/ex4.robot">
+<test id="s1-t1" name="Swiper-Test" line="5">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://gpg.ceis.tw/</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230215 11:55:30.514" level="INFO">Opening browser 'Chrome' to base url 'https://gpg.ceis.tw/'.</msg>
+<status status="PASS" starttime="20230215 11:55:30.513" endtime="20230215 11:55:38.408"/>
+</kw>
+<kw name="SwiperSelect" library="siteSelect">
+<arg>排行榜</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[@class="swiper-wrapper"]/div[contains(@class,"swiper-slide")]/span[contains(text(),"${text}")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230215 11:55:38.411" level="INFO">Clicking element '//div[@class="swiper-wrapper"]/div[contains(@class,"swiper-slide")]/span[contains(text(),"排行榜")]'.</msg>
+<status status="PASS" starttime="20230215 11:55:38.410" endtime="20230215 11:55:38.540"/>
+</kw>
+<status status="PASS" starttime="20230215 11:55:38.409" endtime="20230215 11:55:38.541"/>
+</kw>
+<status status="PASS" starttime="20230215 11:55:30.512" endtime="20230215 11:55:38.541"/>
+</test>
+<status status="PASS" starttime="20230215 11:55:30.216" endtime="20230215 11:55:38.543"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Ex4">Ex4</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

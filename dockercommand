@@ -1,0 +1,6 @@
+docker build -t = projectname . -- 創建image
+docker images --查看image
+docker ps -a --查看哪些服務再啟動
+docker stop container_id --停下container
+docker rm container_id -- 刪除container
+docker rmi image_id -- 刪除 image

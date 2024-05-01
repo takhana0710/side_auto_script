@@ -21,7 +21,7 @@ SCOPES = ['https://www.googleapis.com/auth/drive',
           ]
 class auth():
     def __init__(self):
-        self.apikey = 'AIzaSyACHHTo6mfAGiOjJfXaXemyNshPo3CeSIQ'
+        self.apikey = ''
     
     def gettoken(self):
         with open(token_path, 'r', encoding='utf-8') as f:

@@ -18,8 +18,8 @@ SCOPES = ['https://www.googleapis.com/auth/drive',
 
 class auth():
     def __init__(self):
-        self.mail = 'huahung@ceis.tw'
-        self.apikey= 'AIzaSyACHHTo6mfAGiOjJfXaXemyNshPo3CeSIQ'
+        self.mail = ''
+        self.apikey= ''
     
     def gettoken(self):
         with open('token.json', 'r', encoding='utf-8') as f:

@@ -77,8 +77,6 @@ def play_game(member,game):
     time.sleep(5)
 
 def apitest():
-    # driver.loginV2(member_account='+886977113978')
-    # token=driver.getToken()
     api = gpg_api(token=driver.token)
     # driver.exit()
     res = api.apiGetData(method='get',api_url=FontAPI.wallet_search.value,payload={'Locale': 'zh-TW', 'CheckProviderMember': True, 'UpdateFromProvider': True})
